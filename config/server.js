@@ -3,7 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const consign = require("consign");
 const expressValidator = require("express-validator");
-const cors = require('cors')
+const cors = require("cors");
 const app = express();
 
 app.use(cors());
