@@ -1,5 +1,7 @@
 import * as repository from "../repository/chat";
 
+export const list = async () => await repository.list();
+
 export const sendMessage = async user => {
   try {
     const response = await repository.sendMessage(user);
@@ -9,4 +11,4 @@ export const sendMessage = async user => {
   }
 };
 
-export const list = async () => await repository.list();
+export const approvedMessage = async _id => repository.approvedMessage(_id);

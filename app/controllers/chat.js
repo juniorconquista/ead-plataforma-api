@@ -6,6 +6,12 @@ export const list = (_, res) =>
     .then(response => res.json(response))
     .catch(err => res.status(400).json({ message: err.message }));
 
+export const approvedMessage = (req, res) =>
+  services
+    .approvedMessage(req.params._id)
+    .then(response => res.json(response))
+    .catch(err => res.status(400).json({ message: err.message }));
+
 export const sendMessage = (application, req, res) =>
   services
     .sendMessage(req.body)

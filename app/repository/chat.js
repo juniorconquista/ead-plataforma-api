@@ -15,3 +15,14 @@ export const sendMessage = message => {
   });
   return chatAux.save();
 };
+
+export const approvedMessage = async _id =>
+  await chatModel.findOneAndUpdate(
+    { _id },
+    {
+      $set: {
+        approved: true
+      }
+    },
+    { new: true }
+  );
