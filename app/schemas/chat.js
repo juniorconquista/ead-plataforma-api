@@ -8,7 +8,7 @@ const chatSchema = new Schema({
   sender: { type: Object },
   text: String,
   idSender: { type: String },
-  approved: { type: Boolean, default: false }
+  status: { type: String, default: "waiting" }
 });
 
 chatSchema.plugin(timestamps);

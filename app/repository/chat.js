@@ -3,7 +3,7 @@ import chatModel from "../schemas/chat";
 export const list = async () =>
   await chatModel
     .find()
-    .select(["createdAt", "sender", "text", "idSender", "approved"]);
+    .select(["createdAt", "sender", "text", "idSender", "status"]);
 
 export const sendMessage = message => {
   const chatAux = new chatModel({
@@ -16,12 +16,23 @@ export const sendMessage = message => {
   return chatAux.save();
 };
 
-export const approvedMessage = async _id =>
+export const statusMessage = async (_id, status) =>
   await chatModel.findOneAndUpdate(
     { _id },
     {
       $set: {
-        approved: true
+        status
+      }
+    },
+    { new: true }
+  );
+
+export const rejectedMessage = async _id =>
+  await chatModel.findOneAndUpdate(
+    { _id },
+    {
+      $set: {
+        rejected: true
       }
     },
     { new: true }

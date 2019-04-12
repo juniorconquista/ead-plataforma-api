@@ -11,4 +11,6 @@ export const sendMessage = async user => {
   }
 };
 
-export const approvedMessage = async _id => repository.approvedMessage(_id);
+export const statusMessage = async (_id, status) =>
+  repository.statusMessage(_id, status);
+
