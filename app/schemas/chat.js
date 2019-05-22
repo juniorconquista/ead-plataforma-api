@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import uuidv4 from "uuid/v4";
 import timestamps from "mongoose-timestamp";
 
 const Schema = mongoose.Schema;
