@@ -11,7 +11,9 @@ export const sendMessage = message => {
       name: message.nameSender,
       _id: message.idSender
     },
-    text: message.text
+    idSender: message.idSender,
+    text: message.text,
+    status: message.status || 'waiting'
   });
   return chatAux.save();
 };

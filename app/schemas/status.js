@@ -4,10 +4,10 @@ import timestamps from "mongoose-timestamp";
 const Schema = mongoose.Schema;
 
 const statusSchema = new Schema({
-  uuid: { type: "String", type: String, required: true, unique: true },
+  uuid: { type: "String", required: true, unique: true },
   date: { type: Date },
   name: String,
-  isAdmin: { type: Boolean }
+  isAdmin: { type: Boolean, default: false }
 });
 
 statusSchema.plugin(timestamps);

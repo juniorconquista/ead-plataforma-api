@@ -4,9 +4,9 @@ import timestamps from "mongoose-timestamp";
 const Schema = mongoose.Schema;
 
 const chatSchema = new Schema({
-  sender: { type: Object },
-  text: String,
-  idSender: { type: String },
+  sender: { type: Object, required: true },
+  text: { type: String, required: true },
+  idSender: { type: String, required: true },
   status: { type: String, default: "waiting" }
 });
 

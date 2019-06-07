@@ -6,26 +6,28 @@ import timestamps from "mongoose-timestamp";
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  uuid: { type: "String", required: true, unique: true, default: uuidv4 },
+  uuid: { type: "String", required: true, unique: true },
   name: String,
-  email: String,
-  password: String
+  email: { type: "String", required: true, unique: true },
+  password: { type: "String", required: true },
+  isAdmin: { type: Boolean, default: false }
 });
 
 userSchema.pre("save", function(next) {
   if (this.isModified("password")) {
+    ``;
     bcrypt.genSalt(10, (err, salt) => {
       bcrypt.hash(this.password, salt, (err, hash) => {
         if (err) {
           return next(err);
         }
-        this  .password = hash;
+        this.password = hash;
         next();
       });
     });
   } else {
     next();
-  }
+  } 
 });
 
 userSchema.methods.validatePassword = function(passw, cb) {

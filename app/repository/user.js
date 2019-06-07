@@ -7,7 +7,8 @@ export const create = user => {
   const userAux = new userModel({
     name: user.name,
     email: user.email,
-    password: user.password
+    password: user.password,
+    uuid: user.uuid
   });
   return userAux.save();
 };
