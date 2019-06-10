@@ -1,6 +1,6 @@
 const app = require("./app/config/server");
 
-const port = 3003;
+const port = process.env.PORT || 3003;
 const server = app.listen(port, () =>
   console.log("The Mobile API is now running at http://localhost:" + port)
 );
