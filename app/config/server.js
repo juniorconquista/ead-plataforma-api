@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(expressValidator());
 
-consign({ cwd: process.cwd() })
+consign({ cwd: 'app' })
   .include("routes")
   .then("config/dbConnection.js")
   .into(app);
