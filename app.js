@@ -1,4 +1,4 @@
-const app = require("./config/server");
+const app = require("./app/config/server");
 
 const port = 9000;
 const server = app.listen(port, () =>
