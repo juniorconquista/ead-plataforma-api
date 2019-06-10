@@ -1,6 +1,11 @@
 import mongoose from "mongoose";
 
-mongoose.connect("mongodb://admin:rarolabs@127.0.0.1:27017/webinar-ead", {
+// mongoose.connect("mongodb://admin:rarolabs@127.0.0.1:27017/webinar-ead", {
+//   useCreateIndex: true,
+//   useNewUrlParser: true
+// });
+
+mongoose.connect("mongodb://ead-plataforma:Juninho10@ds145786.mlab.com:45786/heroku_nqnvx644", {
   useCreateIndex: true,
   useNewUrlParser: true
 });
