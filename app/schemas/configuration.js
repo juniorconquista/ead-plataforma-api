@@ -5,6 +5,8 @@ const Schema = mongoose.Schema;
 
 const configurationSchema = new Schema({
   url: { type: String, required: true },
+  title: { type: String, required: true },
+  description: { type: String, required: true },
   moderateChat: { type: Boolean, default: true },
   date: { type: Date },
   inscriptionsClosed: { type: Boolean, default: false }
