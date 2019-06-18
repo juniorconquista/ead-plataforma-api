@@ -10,7 +10,10 @@ app.set("io", io);
 
 io.on("connection", socket => {
   io.sockets.emit("chat|count|users", Object.keys(io.engine.clients).length);
-  socket.on("disconnect", () => {
-    io.sockets.emit("chat|count|users", Object.keys(io.engine.clients).length);
+  socket.on("slide|previous", page => {
+    io.sockets.emit("slide|previous|page", page);
+  });
+  socket.on("slide|next", page => {
+    io.sockets.emit("slide|next|page", page);
   });
 });
