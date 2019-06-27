@@ -23,3 +23,5 @@ export const sendMessage = (application, req, res) =>
       application.get("io").emit("chat|message|receive", response);
     })
     .catch(err => res.status(400).json({ message: err.message }));
+
+    

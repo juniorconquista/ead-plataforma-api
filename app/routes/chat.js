@@ -9,3 +9,4 @@ module.exports = application => {
     controller.sendMessage(application, req, res)
   );
 };
+
